@@ -90,6 +90,7 @@ The classifier dataset and the RAG document collection are separate assets: the 
 intent-router/
 |-- README.md
 |-- pyproject.toml
+|-- requirements.txt             # Dependency list; install inside .venv
 |-- .env.example                 # Required settings; no credentials
 |-- .gitignore
 |-- configs/
@@ -176,7 +177,9 @@ intent-router/
     `-- evaluation_plan.md
 ```
 
-Create modules as their functionality is implemented. Private documents, credentials, large datasets, and generated model/index artifacts should not be committed. Small sanitized examples and test fixtures can be versioned.
+Create modules as their functionality is implemented. Install all Python dependencies inside the project's ignored `.venv`, following the [README setup instructions](../README.md#local-setup). Maintain dependencies in `requirements.txt`; `pyproject.toml` reads that list for package installation. Keep source code and project data outside `.venv`.
+
+Private documents, credentials, large datasets, and generated model/index artifacts should not be committed. Small sanitized examples and test fixtures can be versioned.
 
 ## Shared interfaces
 
